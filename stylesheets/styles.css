@@ -1,0 +1,12 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    width: 500px;
+    height: 500px;
+}
+
+.box {
+    width: 29.25px;
+    height: 29.25px;
+    border: solid black 1px;
+}
