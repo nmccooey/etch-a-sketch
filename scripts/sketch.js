@@ -1,3 +1,4 @@
+const rainbowColors = ["purple", "blue", "green", "yellow", "orange", "red"];
 let colorChoice = "black";
 
 // Creates a new grid with specified width.
@@ -8,16 +9,18 @@ function createNewGrid(gridWidth) {
     gridContainer.innerHTML = "";
 
     for(let i = 0; i < gridWidth; i++) {
-        gridContainer.innerHTML += '<div class="box"></div>';
+        let cell = document.createElement('div');
+        gridContainer.appendChild(cell);
+        cell.className = "box";
 
         for(let j = 1; j < gridWidth; j++) {
-            gridContainer.innerHTML += '<div class="box"></div>';
+            let cell = document.createElement('div');
+            gridContainer.appendChild(cell);
+            cell.className = "box";
         }
     }
     /*
     Determines pixel size of each div. Note formula: (500 / gridWidth - 2).
-    Note that -2 is to account for the margins on each div. If the margins in
-    styles.css changes, the formula must be changed.
     */
     document.querySelectorAll('.box').forEach(boxItem => {
         boxItem.style.width = (500 / gridWidth - 2) + "px";
@@ -30,9 +33,20 @@ function createNewGrid(gridWidth) {
     // Div's background color will turn to color of choice on mouseover.
     document.querySelectorAll('.box').forEach(boxItem => {
         boxItem.addEventListener('mouseover', function() {
-        boxItem.style.backgroundColor = colorChoice;
+            if (colorChoice === "rainbow"){
+                boxItem.style.backgroundColor = rainbowColors[getRandomInt(0, 5)];
+            } else {
+                boxItem.style.backgroundColor = colorChoice;
+            }
     });
   });
+}
+
+// Geneterates a random number between min and max inclusive.
+function getRandomInt(min, max) {
+    min = Math.ceil(min)
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 // Initially sets up a grid of 16x16.
@@ -41,18 +55,24 @@ createNewGrid(16);
 // User can create a new grid.
 const resetButton = document.querySelector(".reset-button");
 resetButton.addEventListener("click", function() {
-    let width = window.prompt("Enter width of new grid: ");
+    let width = window.prompt("Enter width of new grid (16 - 64):");
     createNewGrid(width);
 });
 
 // User can change color to red.
 const redButton = document.querySelector(".red-button");
-redButton.addEventListener("click", function(){
+redButton.addEventListener("click", function() {
     colorChoice = "red";
-})
+});
 
 // User can change color to black.
 const blackButton = document.querySelector(".black-button");
-blackButton.addEventListener("click", function(){
+blackButton.addEventListener("click", function() {
     colorChoice = "black";
-})
+});
+
+// User can change color to rainbow.
+const rainbowButton = document.querySelector(".rainbow-button");
+rainbowButton.addEventListener("click", function() {
+    colorChoice = "rainbow";
+});

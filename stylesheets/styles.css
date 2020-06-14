@@ -6,7 +6,7 @@
 
 .title {
     font-family: 'Annie Use Your Telescope', cursive;
-    margin-top: 5px;
+    margin-top: 0px;
     margin-bottom: 0px;
 }
 
@@ -20,18 +20,17 @@
     grid-template-columns: repeat(16, 1fr);
     width: 500px;
     height: 500px;
-    margin: 10px;
+    margin-bottom: 10px;
     border: saddlebrown solid 5px;
 }
 
 .bottom-container {
-    margin-top: 15px;
     display: flex;
     justify-content: space-evenly;
 }
 
 .box {
-    border: solid black 1px;
+    border: solid #807e7e 1px;
 }
 
 button {
