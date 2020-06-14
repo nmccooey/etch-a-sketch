@@ -1,12 +1,35 @@
+.header-container {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    border: blue solid 2px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     width: 500px;
     height: 500px;
+    margin: 10px;
+}
+
+.bottom-container {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .box {
-    width: 29.25px;
-    height: 29.25px;
     border: solid black 1px;
+}
+
+button {
+    width: 250px;
+    height: 40px;
 }
