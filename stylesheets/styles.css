@@ -1,15 +1,18 @@
 .header-container {
     display: flex;
     justify-content: center;
+    font-size: 35px;
 }
 
 .title {
-    border: blue solid 2px;
+    font-family: 'Annie Use Your Telescope', cursive;
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
 
 .main-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .grid-container {
@@ -18,9 +21,11 @@
     width: 500px;
     height: 500px;
     margin: 10px;
+    border: saddlebrown solid 5px;
 }
 
 .bottom-container {
+    margin-top: 15px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -30,6 +35,28 @@
 }
 
 button {
-    width: 250px;
-    height: 40px;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    background-color: #8a4413;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Annie Use Your Telescope', cursive;
+}
+
+button:hover {
+    background-color: rgb(175, 103, 56);
+}
+
+button:active {
+    background-color: rgb(155, 138, 125);
+}
+
+img {
+    max-height: 20%;
+    max-width: 20%;
+    object-fit: contain;
 }

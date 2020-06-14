@@ -1,3 +1,5 @@
+let colorChoice = "black";
+
 // Creates a new grid with specified width.
 function createNewGrid(gridWidth) {
     const gridContainer = document.querySelector(".grid-container");
@@ -25,10 +27,10 @@ function createNewGrid(gridWidth) {
       gridContainer.style.gridTemplateColumns = `repeat(${gridWidth}, 1fr)`;
       console.log(`repeat(${gridWidth} 1fr)`);
 
-    // Div's background color will turn black on mousover.
+    // Div's background color will turn to color of choice on mouseover.
     document.querySelectorAll('.box').forEach(boxItem => {
         boxItem.addEventListener('mouseover', function() {
-        boxItem.style.backgroundColor = "black";
+        boxItem.style.backgroundColor = colorChoice;
     });
   });
 }
@@ -42,3 +44,15 @@ resetButton.addEventListener("click", function() {
     let width = window.prompt("Enter width of new grid: ");
     createNewGrid(width);
 });
+
+// User can change color to red.
+const redButton = document.querySelector(".red-button");
+redButton.addEventListener("click", function(){
+    colorChoice = "red";
+})
+
+// User can change color to black.
+const blackButton = document.querySelector(".black-button");
+blackButton.addEventListener("click", function(){
+    colorChoice = "black";
+})
