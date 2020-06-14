@@ -37,21 +37,35 @@ button {
     width: 150px;
     height: 50px;
     font-size: 20px;
-    background-color: #8a4413;
-    border: none;
-    color: white;
-    border-radius: 50%;
     text-transform: uppercase;
-    font-weight: bold;
     font-family: 'Annie Use Your Telescope', cursive;
+    font-weight: bold;
+    border-radius: 50%;
+    border: none;
+    background: url("../images/wood_pattern.png");
+    cursor: pointer;
+    box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.2), 
+    inset 0px -5px 0px 0px rgba(0,0,0,0.3), 
+    inset 0px 2px 0px 0px rgba(255,255,255,0.5);
+    opacity: 0.8;
 }
 
 button:hover {
-    background-color: rgb(175, 103, 56);
+    opacity: 1.0;
 }
 
 button:active {
-    background-color: rgb(155, 138, 125);
+    box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.2),
+    inset 0px -2px 0px 0px rgba(0,0,0,0.3),
+    inset 0px 2px 0px 0px rgba(255,255,255,0.5);
+    top: 3px;
+    padding-top: 9px;
+}
+
+button:focus {
+    outline: none;
+    border: solid black 1px;
+    opacity: 1.0; 
 }
 
 img {
