@@ -56,6 +56,13 @@ createNewGrid(16);
 const resetButton = document.querySelector(".reset-button");
 resetButton.addEventListener("click", function() {
     let width = window.prompt("Enter width of new grid (16 - 64):");
+
+    if (width < 16 || width > 64) {
+        do {
+            width = window.prompt("Width must be between 16 and 64. Enter width of new grid:");
+        } while (width < 16 || width > 64);
+    }
+
     createNewGrid(width);
 });
 
